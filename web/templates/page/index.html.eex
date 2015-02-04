@@ -13,6 +13,6 @@
   });
 
 </script>
-<p>Escribe 'matanga1: ping' en IRC.</p>
+<p>Escribe '<%= @nickname %>: ping' en IRC.</p>
 <ul id='events'>
 </ul>

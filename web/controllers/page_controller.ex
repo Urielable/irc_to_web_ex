@@ -4,6 +4,9 @@ defmodule IrcToWebEx.PageController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    {:ok, nick} = Application.fetch_env(:chatty, :nickname)
+    conn
+    |> assign(:nickname, nick)
+    |> render "index.html"
   end
 end
