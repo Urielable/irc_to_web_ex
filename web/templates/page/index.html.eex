@@ -1,0 +1,18 @@
+<script>
+  var socket = new Phoenix.Socket("/ws");
+
+  socket.join("rooms:lobby", {}, function(channel) {
+    channel.on("pong", function(message) {
+      console.log("Got " + message + " while listening for event pong");
+      var node = document.createElement("LI");                 // Create a <li> node
+      var textnode = document.createTextNode(message.nick + ": " + message.response);         // Create a text node
+      node.appendChild(textnode);                              // Append the text to <li>
+      document.getElementById("events").appendChild(node);  
+    });
+  
+  });
+
+</script>
+<p>Escribe 'matanga1: ping' en IRC.</p>
+<ul id='events'>
+</ul>
