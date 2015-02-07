@@ -2,7 +2,7 @@ defmodule IrcToWebEx.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :irc_to_web_ex,
+    [app: :irc_to_web_ex, 
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: ["lib", "web"],
