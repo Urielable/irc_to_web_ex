@@ -20,9 +20,11 @@ defmodule IrcToWebEx.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", IrcToWebEx do
-  #   pipe_through :api
-  # end
+  scope "/api", IrcToWebEx do
+    pipe_through :api
+
+    post "/messages", PageController, :post
+  end
 
   socket "/ws", IrcToWebEx do
     channel "rooms:*", MyChannel

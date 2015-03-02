@@ -9,7 +9,8 @@ use Mix.Config
 config :irc_to_web_ex, IrcToWebEx.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "lPkfAntgbpKbRBaK370nsnjU/ydMOXYR8Pyd7WEg1kqe5pFujFojpON22B+DOUQg",
-  debug_errors: false
+  debug_errors: false,
+  pubsub: [adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
