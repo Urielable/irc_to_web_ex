@@ -1,0 +1,8 @@
+# arranque de iex con phoenix
+iex -S mix phoenix.server
+
+# post desde la linea de comandos
+curl -H "Content-Type: application/json" -d '{"message": "bleh"}'  -vv http://0.0.0.0:4000/api/message
+
+# post desde el iex
+IrcToWebEx.Endpoint.broadcast "rooms:lobby", "new:msg", %{nick: "api", response: "booom"}    
